@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+<t t-name="awesome_tshirt.clientaction" owl="1">
+    <div class="o_action">
+            <Layout display="{ controlPanel: { 'top-right' : false, 'bottom-right': false } }">
+                <t t-set-slot="control-panel-bottom-left">
+                    <button class="btn btn-primary" t-on-click="CustomerView"> Customers </button>
+                    <button class="btn btn-primary" t-on-click="Orders7Days"> New Orders </button>
+                    <button class="btn btn-primary" t-on-click="Cancelled7Days"> Cancelled Orders </button> 
+                </t>          
+            <t t-call="awesome_tshirt.clientaction.statistics"/>
+            </Layout>
+        </div>
+</t>
+<t t-name="awesome_tshirt.clientaction.statistics" owl="1">
+  <div class="ravi_tshirt_dashboard">
+    <div class="d-flex">
+        <div t-foreach="cardString" t-as="key" t-key="key" class="m-2">
+            <Card>
+                <t t-set-slot="title"><t t-esc="cardString[key]"/></t>
+                <p class="card-text text-success"><t t-esc="statistics[key]"/></p>
+            </Card>   
+            
+        </div>      
+    </div>    
+
+    <div class="card mx-3 mt-2 col-4">
+            <div class="card-body">
+            <canvas t-ref="canvas"></canvas>        
+            </div>
+    </div>
+    </div>
+</t>
+
+</templates>

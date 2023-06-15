@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="owl_playground.counter" owl="1">
+    <div class="text-center">
+        <div class="text-primary">
+            <h3>hello world</h3>
+        </div>
+        <div class="fs-2">
+            <span class="$indigo-900 ">Counter:<t t-esc="state.value"/></span>
+        </div>
+        <div class="p-3">
+            <button t-on-click="increment" class="bg-success">Increment
+            </button>`
+        </div>
+    </div>
+    </t>
+</templates>
